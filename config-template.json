@@ -1,5 +1,6 @@
 {
     "db" : {
+        "host": "",
         "gcm_dbname": "",
         "user": "",
         "password": "",

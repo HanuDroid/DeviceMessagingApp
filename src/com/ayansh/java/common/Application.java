@@ -44,7 +44,7 @@ public abstract class Application {
 	
 	public void initializeApplication() throws IOException, SQLException{
 		
-		String user, pwd, dbURL, db_name;
+		String host, user, pwd, dbURL, db_name;
 		
 		properties.load(getClass().getClassLoader().getResourceAsStream("config.properties"));
 		
@@ -53,11 +53,12 @@ public abstract class Application {
 		configData = readJSONFile("config.json");
 
 		// Take from properties file
+		host = configData.getJSONObject("db").getString("host");
 		db_name = configData.getJSONObject("db").getString("gcm_dbname");
 		user = configData.getJSONObject("db").getString("user");
 		pwd = configData.getJSONObject("db").getString("password");
 		
-		dbURL = "jdbc:mysql://" + db_name + "?noAccessToProcedureBodies=true";
+		dbURL = "jdbc:mysql://" + host + "/" + db_name + "?noAccessToProcedureBodies=true";
 		dbConnection = DBConnection.getInstance(dbURL, user, pwd).getDBConnection();
 		
 		// Thread Limit
