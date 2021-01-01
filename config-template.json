@@ -1,0 +1,23 @@
+{
+    "db" : {
+        "gcm_dbname": "",
+        "user": "",
+        "password": "",
+        "apps_dbname": ""
+    },
+	"gcm_tokens": {
+        "1": "",
+        "2": "",
+        "3": ""
+    },
+    "wpn_credentials": {
+        "1": {
+            "sid": "",
+            "secret": ""
+        },
+        "7": {
+            "sid": "",
+            "secret": ""
+        }
+    }
+}
